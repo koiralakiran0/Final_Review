@@ -50,10 +50,6 @@ public class NewContactActivity extends AppCompatActivity {
         editTextEmail = (EditText) findViewById(R.id.editText_email);
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        StorageReference iconReference = storage.getReference().child("icon");
-
-
-
 
         findViewById(R.id.imageView_select).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +88,10 @@ public class NewContactActivity extends AppCompatActivity {
                             .child(mAuth.getCurrentUser().getUid())
                             .push()
                             .setValue(person);
+
+
+
+
                     finish();
                 }
             }

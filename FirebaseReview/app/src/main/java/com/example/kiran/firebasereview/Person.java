@@ -7,6 +7,8 @@ package com.example.kiran.firebasereview;
 public class Person {
     String name, email, phone, dept;
     int picID;
+    String pictureUrl;
+
     public String key;
 
     public Person() {
@@ -33,5 +35,13 @@ public class Person {
 
     public String getDept() {
         return dept;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }

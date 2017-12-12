@@ -14,7 +14,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 public class ContactsActivity extends AppCompatActivity {
@@ -22,6 +25,7 @@ public class ContactsActivity extends AppCompatActivity {
     ListView listView;
     PersonAdapter personAdapter;
     private DatabaseReference mDatabase;
+    private FirebaseStorage storage;
     private FirebaseAuth mAuth;
     ArrayList<Person> persons;
 
@@ -33,6 +37,10 @@ public class ContactsActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        storage = FirebaseStorage.getInstance();
+
+          storage.getReference().child("google-services.json");
+
 
 
         mDatabase.child("contacts").child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
